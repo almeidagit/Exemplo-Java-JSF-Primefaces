@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+	<title>Login</title>
+
+	<h:outputStylesheet library="css" name="estilo.css" />
+
+</h:head>
+
+<body>
+
+	<header>
+		<div align="center">
+			<h:outputText value="Acesso ao Sistema de Cadastro!" />
+
+		</div>
+	</header>
+	<h:form>
+
+		<div class="p-field p-col-12 p-md-4" align="center">
+
+			<div>
+				<p:outputLabel for="login" value="Usuário  " />
+				<p:inputMask id="login" value="#{LoginBean.usuario}" size="23" />
+			</div>
+			<br />
+
+			<div>
+				<p:outputLabel for="pass" value="Senha    " />
+				<p:password id="pass" value="#{LoginBean.senha}" toggleMask="true"
+					redisplay="true" size="19" />
+			</div>
+			<br />
+
+			<div>
+				<p:commandButton value="Entrar" ajax="false"
+					action="#{LoginBean.validador}"></p:commandButton>
+			</div>
+
+		</div>
+	</h:form>
+
+	<footer>
+		<div align="center">
+			<h:outputText
+				value="SENHA: this.getUsuario().equals(this.getSenha())" />
+		</div>
+	</footer>
+</body>
+
+</html>
